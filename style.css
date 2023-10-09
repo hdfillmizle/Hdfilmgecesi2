@@ -1,70 +1,126 @@
-*,*:after,*:before{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-body{
-	font-family: arial;
-	font-size: 16px;
-	margin: 0;
-	background: #fff;
-	color: #000;
-
-	display: flex;
-	align-items:center;
-	justify-content: space-around;
-	min-height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.form-container{
-	width: 100%;
-	max-width: 600px;
-	margin:0 auto;
-  background: #09aad0;
-  padding: 20px;
-  border-radius: 10px;
-  color: #fff;
+.advert {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
-.input-row{
-  margin-bottom: 10px;
+
+a,
+li {
+  list-style: none;
+  text-decoration: none;
 }
-.input-row label{
-	display: block;
-	margin-bottom: 3px;
+
+body {
+  display: flex;
+  justify-content: center;
 }
-.input-row input,
-.input-row textarea{
-	width: 100%;
-	padding: 10px;
-	border:0;
-	border-radius: 3px;
-	outline: 0;
-	margin-bottom: 3px;
-	font-size: 18px;
-	font-family: arial;
+
+.orta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 115px;
+  position: relative;
+  background-color: black;
+  border-radius: 5px;
 }
-.input-row textarea{
-	height: 100px;
+
+.orta nav {
+  width: 450px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid red;
 }
-.input-row input[type="submit"] {
+
+.orta nav img {
+  width: 139px;
+  height: 48px;
+}
+
+.orta form {
+  width: 100%;
+  height: 100%;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.orta form span {
+  color: aliceblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.orta form .drop-down {
+  color: aliceblue;
+  cursor: pointer;
+  text-align: center;
+}
+
+.orta form input {
+  width: 250px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 600;
+}
+
+.orta form button {
+  padding: 5px;
+  margin-bottom: 16px;
   width: 100px;
-  margin:0 auto;
-  display: block;
-  text-align: center; 
-  background: #002f3a;
-  color: #ffffff;
+  font-weight: 800;
+  background-color: red;
+  outline: none;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
-.success {
-  background-color: #9fd2a1;
-  padding: 5px 10px;
-  color: #326b07;
+
+.orta form .drop-down .down {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+  background-color: rgb(44, 44, 44);
   text-align: center;
-  border-radius: 3px;
-  font-size: 14px;
-  margin-top: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
+.orta form .drop-down .down.active {
+  height: 117px;
+  transition: 0.3s;
+}
 
+.orta form .drop-down .down li {
+  padding: 10px;
+}
 
+.orta form .drop-down .down li a {
+  color: aliceblue;
+  font-size: 15px;
+  font-family: unset;
+}
