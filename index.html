@@ -1,76 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="TV uyumlu web sitesi, navbar, web tasarım">
-    <title>TV Uyumlu Navbar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #333;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 25px 25px;
-        }
-
-        .navbar a,
-        .search-button {
-            text-decoration: none;
-            background-color: transparent;
-            outline: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .navbar .logo a {
-            font-size: 25px;
-            font-weight: 600;
-            color: red;
-            padding: 10px 17px;
-        }
-
-        .navbar .menu a {
-            font-size: 19px;
-            font-weight: 500;
-            color: red;
-            padding: 10px 17px;
-        }
-
-        .navbar .search-input {
-            background-color: transparent;
-            color: aliceblue;
-            border: none;
-            height: 30px;
-            padding: 10px;
-            border-radius: 8px;
-            border: 2px solid aliceblue;
-            outline: none;
-        }
-
-        .navbar .search-button {
-            padding: 14px 17px;
-        }
-
-        .navbar .search-button button {
-            background: none;
-            color: red;
-            border: none;
-            font-size: 18px;
-        }
-    </style>
+    <title>tv Responsive</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <div class="navbar">
         <div class="logo">
             <a href="#">LOGO</a>
@@ -86,53 +24,7 @@
             <a href="#">GİRİŞ</a>
         </div>
     </div>
-
-    <script>
-        const elements = document.querySelectorAll('.navbar a, .search-input, .search-button');
-        let currentIndex = 0;
-        let inputFocused = false; // Input seçili mi kontrolü
-
-        function setFocus() {
-            elements[currentIndex].focus();
-            elements[currentIndex].style.backgroundColor = 'black';
-
-            // Sadece input seçiliyken yazı girişi aktif olsun
-            if (inputFocused) {
-                elements[currentIndex].querySelector('input').focus();
-            }
-        }
-
-        document.addEventListener('keydown', function (event) {
-            elements[currentIndex].style.backgroundColor = 'transparent';
-            if (event.key === 'ArrowLeft') {
-                currentIndex = (currentIndex - 1 + elements.length) % elements.length;
-            } else if (event.key === 'ArrowRight') {
-                currentIndex = (currentIndex + 1) % elements.length;
-            }
-
-            // Sadece input üzerindeyken yazı girişi aktif olsun
-            inputFocused = elements[currentIndex].classList.contains('search-input');
-
-            setFocus();
-        });
-
-        document.addEventListener('keyup', function (event) {
-            if (event.key === 'Enter') {
-                if (currentIndex === elements.length - 1) {
-                    elements[currentIndex].querySelector('input').focus();
-                } else if (elements[currentIndex].classList.contains('search-input')) {
-                    elements[currentIndex].querySelector('input').focus();
-                } else {
-                    elements[currentIndex].click();
-                }
-            }
-        });
-
-        setFocus();
-
-
-    </script>
-
+    <div class="selected-div"></div>
+    <script src="script.js"></script>
 </body>
-
 </html>
